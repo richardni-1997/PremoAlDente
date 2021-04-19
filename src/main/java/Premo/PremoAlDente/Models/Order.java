@@ -33,12 +33,23 @@ public class Order {
 	
 	
 	@OneToMany(mappedBy = "customer")
-	@JoinColumn(name = "customerid", referencedColumnName = "customerid")
-	private long customerid;
+	@JoinColumn(name = "customerId", referencedColumnName = "customerId")
+	private long customerId;
 	
-	@OneToMany
-	@JoinColumn(name = "employeeid", referencedColumnName = "employeeid")
-	private long employeeid;
+	@OneToMany(mappedBy = "employee")
+	@JoinColumn(name = "employeeId", referencedColumnName = "employeeId")
+	private long employeeId;
+	
+
+	public Order(String[] products, Date timestamp, double total, int zipcode, long customerId,
+			long employeeId) {
+		this.products = products;
+		this.timestamp = timestamp;
+		this.total = total;
+		this.zipcode = zipcode;
+		this.customerId = customerId;
+		this.employeeId = employeeId;
+	}
 
 	public long getOrderid() {
 		return orderid;
@@ -80,20 +91,20 @@ public class Order {
 		this.zipcode = zipcode;
 	}
 
-	public long getCustomerid() {
-		return customerid;
+	public long getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomerid(long customerid) {
-		this.customerid = customerid;
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
 	}
 
-	public long getEmployeeid() {
-		return employeeid;
+	public long getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setEmployeeid(long employeeid) {
-		this.employeeid = employeeid;
+	public void setEmployeeId(long employeeId) {
+		this.employeeId = employeeId;
 	}
 	
 }
