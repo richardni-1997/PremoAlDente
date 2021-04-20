@@ -48,6 +48,9 @@ public class Employee {
 		this.endDate = endDate;
 		this.active = active;
 	}
+	
+
+	public Employee() {}
 
 	public long getEmployeeId() {
 		return employeeId;
