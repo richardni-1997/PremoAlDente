@@ -32,6 +32,8 @@ public class Employee {
 	@Column(name = "active")
 	private boolean active;
 
+	public Employee() {}
+	
 	public Employee(long employeeId, String name, String address, Date startDate, Date endDate, boolean active) {
 		this.employeeId = employeeId;
 		this.name = name;
@@ -49,9 +51,6 @@ public class Employee {
 		this.active = active;
 	}
 	
-
-	public Employee() {}
-
 	public long getEmployeeId() {
 		return employeeId;
 	}
