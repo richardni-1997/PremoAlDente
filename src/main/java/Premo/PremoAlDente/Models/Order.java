@@ -1,5 +1,6 @@
 package Premo.PremoAlDente.Models;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,10 +16,10 @@ public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long orderid;
+	private long orderId;
 	
 	@Column(name = "products")
-	private String[] products;
+	private String products;
 	
 	@Column(name = "timestamp")
 	private Date timestamp;
@@ -28,7 +29,6 @@ public class Order {
 	
 	@Column(name = "zipcode")
 	private int zipcode;
-	
 
 	@Column(name = "customerId")
 	private long customerId;
@@ -36,8 +36,20 @@ public class Order {
 	@Column(name = "employeeId")
 	private long employeeId;
 	
+	public Order () {}
+	public Order(long orderId, String products, Date timestamp, double total, int zipcode, long customerId,
+			long employeeId) {
+		super();
+		this.orderId = orderId;
+		this.products = products;
+		this.timestamp = timestamp;
+		this.total = total;
+		this.zipcode = zipcode;
+		this.customerId = customerId;
+		this.employeeId = employeeId;
+	}
 
-	public Order(String[] products, Date timestamp, double total, int zipcode, long customerId,
+	public Order(String products, Date timestamp, double total, int zipcode, long customerId,
 			long employeeId) {
 		this.products = products;
 		this.timestamp = timestamp;
@@ -48,18 +60,18 @@ public class Order {
 	}
 
 	public long getOrderid() {
-		return orderid;
+		return orderId;
 	}
 
 	public void setOrderid(long orderid) {
-		this.orderid = orderid;
+		this.orderId = orderid;
 	}
 
-	public String[] getProducts() {
+	public String getProducts() {
 		return products;
 	}
 
-	public void setProducts(String[] products) {
+	public void setProducts(String products) {
 		this.products = products;
 	}
 
@@ -102,5 +114,11 @@ public class Order {
 	public void setEmployeeId(long employeeId) {
 		this.employeeId = employeeId;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", products=" + products + ", timestamp=" + timestamp
+				+ ", total=" + total + ", zipcode=" + zipcode + ", customerId=" + customerId + ", employeeId="
+				+ employeeId + "]";
+	}
 }
