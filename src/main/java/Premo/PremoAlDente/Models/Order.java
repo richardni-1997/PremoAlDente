@@ -29,6 +29,10 @@ public class Order {
 	@Column(name = "zipcode")
 	private int zipcode;
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 830066f72dc759d079fd07ec109e3e10bc9324ef
 	@Column(name = "customerId")
 	private long customerId;
 	
