@@ -65,7 +65,7 @@ public class CustomerController {
 	    try 
 	    {
 	      Customer _customer = customerRepository.save(
-	    		  new Customer(customer.getCustomerId(), customer.getName(), customer.getAddress(), customer.getAddress()));
+	    		  new Customer(customer.getCustomerId(), customer.getName(), customer.getPhoneNumber(), customer.getAddress()));
 	      
 	      return new ResponseEntity<>(_customer, HttpStatus.CREATED);
 	    } 
