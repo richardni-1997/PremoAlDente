@@ -7,12 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 	
 	@Id
@@ -32,12 +30,10 @@ public class Order {
 	private int zipcode;
 	
 	
-	@OneToMany(mappedBy = "customer")
-	@JoinColumn(name = "customerId", referencedColumnName = "customerId")
+	@Column(name = "customerId")
 	private long customerId;
 	
-	@OneToMany(mappedBy = "employee")
-	@JoinColumn(name = "employeeId", referencedColumnName = "employeeId")
+	@Column(name = "employeeId")
 	private long employeeId;
 	
 
