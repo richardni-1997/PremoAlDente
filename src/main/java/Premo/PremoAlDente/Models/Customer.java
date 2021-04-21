@@ -21,6 +21,15 @@ public class Customer
 	
 	@Column(name="address")
 	private String address;
+	public Customer() {
+		
+	}
+	
+	public Customer(String name, String address, String phoneNumber) {
+		this.name = name;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+	}
 	
 	public Customer(long customerId, String name, String address, String phoneNumber) {
 		super();
@@ -65,8 +74,6 @@ public class Customer
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Customer() {
-		super();
-	}
+	
 
 }
